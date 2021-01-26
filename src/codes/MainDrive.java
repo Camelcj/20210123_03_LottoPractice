@@ -13,7 +13,7 @@ public class MainDrive {
 		int[] myLottoNums = new int[6];
 		
 		for(int i = 0;  i < myLottoNums.length; i++) {
-			System.out.print("로또 번호를 입력하세요 : ");
+			System.out.print((i + 1) + "번째 로또 번호를 입력하세요 : ");
 			
 			int input = scan.nextInt();
 			
