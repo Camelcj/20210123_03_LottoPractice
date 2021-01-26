@@ -45,7 +45,8 @@ public class MainDrive {
 					}
 				}
 
-				if (isRangeOk) {
+				//범위도 OK고 중복여부도 통과해야한다.
+				if (isRangeOk && isDupOk) {
 					myLottoNums[i] = input;
 
 					// 올바른 결과가 들어 왔으면 - while문을 종료
