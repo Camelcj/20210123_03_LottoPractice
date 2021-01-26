@@ -28,6 +28,23 @@ public class MainDrive {
 
 				boolean isRangeOk = (1 <= input && input <= 45);
 
+				// 추가검사 : 중복인지 아닌지
+				// 중복인가 ? 내가 입력한 숫자가 이미 배열안에 있다면 사용불가
+
+				// 중복검사 결과
+				// 써도 괜찮다고 했다가 - 같은 숫자 발견, 쓰면 안된다고 할 것
+				boolean isDupOk = true;
+
+				// 배열 안에 숫자를 모두 꺼내보자
+				for (int myNum : myLottoNums) {
+					// 입력한 값과 myNum이같은지? 같다면 중복검사 탈락
+					if (input == myNum) {
+						isDupOk = false;
+						//중복 확정되면 for문 종료
+						break;
+					}
+				}
+
 				if (isRangeOk) {
 					myLottoNums[i] = input;
 
@@ -35,10 +52,10 @@ public class MainDrive {
 					// 다음 자리의 숫자를 받으러 이동
 					break;
 				}
-				
+
 				else {
-					//검사에 실패한 경우
-					//안내메세지도 보여주자
+					// 검사에 실패한 경우
+					// 안내메세지도 보여주자
 					System.out.println("잘못된 숫자 입니다. 다시 입력해 주세요");
 				}
 
