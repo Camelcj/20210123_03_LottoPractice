@@ -20,6 +20,12 @@ public class MainDrive {
 			myLottoNums[i] = input;
 		}
 		
+	// 저장된 값을 출력
+		
+		for(int myNum : myLottoNums) {
+			System.out.println(myNum);
+		}
+		
 	}
 
 }
