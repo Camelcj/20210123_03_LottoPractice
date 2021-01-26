@@ -73,6 +73,27 @@ public class MainDrive {
 
 		// 저장된 값을 출력
 
+//응용문제 2 - 입력된 값들을 작은 값으로 부터 정리하기.
+	
+//2-1 가로로 2개씩 자리바꿈 for - 빠른 for문
+// 총 6번 이 과정을 반복하게 하는 for - 느린 for문
+		
+		for(int i = 0; i < myLottoNums.length; i++) {
+			
+			for(int j = 0; j < myLottoNums.length; j++) {
+				
+//ex j : 0 ,배열 0번칸 배열 1번칸 비교 - > 바꿔야한다면 바꾸자
+				
+				if(myLottoNums[j] > myLottoNums[j + 1]) {
+					//앞의 숫자가 크다는 거 발견 서로 바꿔주자
+					int backUp = myLottoNums[j];
+					myLottoNums[j] = myLottoNums[j + 1];
+					myLottoNums[j + 1] = backUp;
+				}
+			}
+		}
+		
+		
 		for (int myNum : myLottoNums) {
 			System.out.println(myNum);
 		}
