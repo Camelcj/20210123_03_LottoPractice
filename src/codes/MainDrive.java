@@ -6,6 +6,14 @@ public class MainDrive {
 
 	// 깃허브 연동 프로젝트
 	public static void main(String[] args) {
+		
+		//미리 당첨번호를 설정.
+		int[] winNumbers = {9, 18, 19, 30, 34, 40};
+		
+		//보너스번호 : 5개 맞춘 경우에만 활용
+		int bonusNum = 20;
+		
+				
 
 		Scanner scan = new Scanner(System.in);
 		// 6개의 로또 숫자를 저장할 배열
