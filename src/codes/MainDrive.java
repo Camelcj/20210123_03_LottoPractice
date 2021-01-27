@@ -88,12 +88,13 @@ public class MainDrive {
 		
 		for(int i = 0; i < myLottoNums.length; i++) {
 			
-			for(int j = 0; j < myLottoNums.length; j++) {
+			for(int j = 0; j < myLottoNums.length - 1; j++) {
 				
 //ex j : 0 ,배열 0번칸 배열 1번칸 비교 - > 바꿔야한다면 바꾸자
 				
 				if(myLottoNums[j] > myLottoNums[j + 1]) {
 					//앞의 숫자가 크다는 거 발견 서로 바꿔주자
+					
 					int backUp = myLottoNums[j];
 					myLottoNums[j] = myLottoNums[j + 1];
 					myLottoNums[j + 1] = backUp;
@@ -132,7 +133,28 @@ public class MainDrive {
 		}
 		
 		else if(correctNumCount == 5) {
-			//보너스 번호 맞췄는지? 추가검사
+//보너스번호 맞췄는지? 추가검사
+//못 찾은 상태로 초기화 - > 보너스 번호를 찾으면 true로 바꾸자			
+			boolean isBonusNumOk = false;
+
+//내 번호 목록을 다시 돌아보면서 - > 보너스 번호와 비교를 해보자
+
+			for (int myNum : myLottoNums) {
+
+//내 번호와 보너스 번호가 일치한 걸 찾았다면 보너스 번호 맞춤으로 설정				
+				if (myNum == bonusNum) {
+					isBonusNumOk = true;
+
+				}
+			}
+//보너스 번호 당첨 여부에 따라 등수가 갈린다
+					
+			if(isBonusNumOk) {
+				System.out.println("2등");
+			}
+			else {
+				System.out.println("3등");
+			}
 		}
 		
 		else if(correctNumCount == 4) {
